@@ -98,7 +98,7 @@ describe("When I click on the 'New Bill' button", () => {
     expect(buttonNewBill).toBeTruthy();
 
     buttonNewBill.addEventListener("click", handleClickNewBill);
-    //
+    // simule un clic sur le bouton
     fireEvent.click(buttonNewBill);
     //vérifie que la page "Nouvelle facture" a bien été affichée après que l'utilisateur ait cliqué sur le bouton "Nouvelle facture"
     expect(screen.getByText("Envoyer une note de frais")).toBeTruthy();
