@@ -16,3 +16,7 @@ Un screenshot au format PNG du rapport de couverture Jest:
 
 Un screenshot au format PNG du rapport de tests Jest sur l’ensemble des fichiers d’UI (src/views) et des fichiers d’UX (src/containers):  
 ![image](https://user-images.githubusercontent.com/93211301/217924160-1ded62a8-984c-4b3c-a7a2-ba96bd342a4e.png)
+
+Un document au format PDF du plan de tests End-To-End pour le parcours employé :
+
+C:\Users\nrosin\Documents\openclassroom angel\projet 9\bill-app\test End-To-End.pdf
