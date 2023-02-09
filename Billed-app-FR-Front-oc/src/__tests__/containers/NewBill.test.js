@@ -162,22 +162,6 @@ describe("Given I am a user connected as Employee", () => {
         status: "pending",
       };
 
-      //vérifier que tous les champs ont les valeurs correctes:
-      expect(validBill).toEqual(
-        expect.objectContaining({
-          type: "Transports",
-          name: "vol Paris Toulouse",
-          date: "2023-01-03",
-          amount: 80,
-          vat: 70,
-          pct: 20,
-          commentary: "Commentary",
-          fileUrl: "../img/0.jpg",
-          fileName: "test.jpg",
-          status: "pending",
-        })
-      );
-
       // Charger les valeurs dans les champs de formulaire pour simuler un utilisateur remplissant et soumettant un formulaire
       screen.getByTestId("expense-type").value = validBill.type;
       screen.getByTestId("expense-name").value = validBill.name;

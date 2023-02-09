@@ -21,7 +21,6 @@ jest.mock("../../app/store", () => mockStore);
 describe("views/VerticalLayout", () => {
   //On décrit l'action que l'on test :
   describe("When I am on Bills Page", () => {
-    //Message indiquant le résultat attendu :
     //Ensuite, l'icône de la facture dans la disposition verticale doit être mise en surbrillance
     test("Then bill icon in vertical layout should be highlighted", async () => {
       Object.defineProperty(window, "localStorage", {
