@@ -19,4 +19,4 @@ Un screenshot au format PNG du rapport de tests Jest sur l’ensemble des fichie
 
 Un document au format PDF du plan de tests End-To-End pour le parcours employé :
 
-C:\Users\nrosin\Documents\openclassroom angel\projet 9\bill-app\test End-To-End.pdf
+https://github.com/angelique31/bill/blob/main/test%20End-To-End.pdf
