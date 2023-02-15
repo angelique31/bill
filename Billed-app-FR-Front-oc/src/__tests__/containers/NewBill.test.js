@@ -130,7 +130,7 @@ describe("Given I am a user connected as Employee", () => {
       const onNavigate = (pathname) => {
         document.body.innerHTML = ROUTES({ pathname });
       };
-      //SIMILATION DE LA CONNECTION DE L EMPLOYEE
+      //SIMULATION DE LA CONNECTION DE L'EMPLOYEE
       Object.defineProperty(window, "localStorage", {
         value: localStorageMock,
       });

@@ -158,12 +158,9 @@ export default class {
 
     //avec la méthode off() de jquery,on supprime tous les gestionnaires d'événements associés à l'élément (#open-bill${bill.id}) avant d'ajouter un nouveau gestionnaire d'événements à la méthode click.
     bills.forEach((bill) => {
-      // console.log(bills);
       $(`#open-bill${bill.id}`)
         .off()
         .click((e) => this.handleEditTicket(e, bill, bills));
-      // console.log(`${bill.id}`);
-      // console.log(e, bill, bills);
     });
 
     return bills;

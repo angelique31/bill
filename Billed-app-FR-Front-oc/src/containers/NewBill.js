@@ -10,10 +10,8 @@ export default class NewBill {
     const formNewBill = this.document.querySelector(
       `form[data-testid="form-new-bill"]`
     );
-    // console.log(formNewBill);
     formNewBill.addEventListener("submit", this.handleSubmit);
     const file = this.document.querySelector(`input[data-testid="file"]`);
-    // console.log(file);
     file.addEventListener("change", this.handleChangeFile);
     this.fileUrl = null;
     this.fileName = null;
@@ -48,7 +46,9 @@ export default class NewBill {
     } else {
       //supprimer le message d'erreur lorsque l'extension du fichier est autorisée
       const errorMessageElement = this.document.querySelector(".error-message");
-      errorMessageElement.innerHTML = "";
+      if (errorMessageElement) {
+        errorMessageElement.innerHTML = "";
+      }
     }
 
     const formData = new FormData();
@@ -65,7 +65,6 @@ export default class NewBill {
         },
       })
       .then(({ fileUrl, key }) => {
-        // console.log(fileUrl);
         this.billId = key;
         this.fileUrl = fileUrl;
         this.fileName = fileName;

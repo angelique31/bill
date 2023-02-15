@@ -14,14 +14,13 @@ export default class Bills {
     const buttonNewBill = document.querySelector(
       `button[data-testid="btn-new-bill"]`
     );
-    // console.log(buttonNewBill);
+
     if (buttonNewBill)
       //ajoute un écouteur d'événement "click" sur le bouton "Nouvelle note de frais":
       buttonNewBill.addEventListener("click", this.handleClickNewBill);
     const iconEye = document.querySelectorAll(`div[data-testid="icon-eye"]`);
     if (iconEye)
       iconEye.forEach((icon) => {
-        // console.log(iconEye);
         icon.addEventListener("click", () => this.handleClickIconEye(icon));
       });
     new Logout({ document, localStorage, onNavigate });
