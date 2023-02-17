@@ -21,20 +21,78 @@ const row = (bill) => {
     `;
 };
 
-//Fonction corrigée avec sort() :
+// Fonction de tri des dates corrigée:
+
+const formatedDate = (item) => {
+  const formatMonths = {
+    "Jan.": 0,
+    "Fév.": 1,
+    "Mar.": 2,
+    "Avr.": 3,
+    "Mai.": 4,
+    "Jui.": 5,
+    "Juil.": 6,
+    "Aoû.": 7,
+    "Sept.": 8,
+    "Oct.": 9,
+    "Nov.": 10,
+    "Déc.": 11,
+  };
+
+  const getDateArray = (itemDate) => {
+    console.log(itemDate);
+    console.log(itemDate.date);
+    return itemDate.date.split(" ");
+  };
+
+  const getFixedMonth = (month) => {
+    const correspondenceMonth = formatMonths[month];
+    if (correspondenceMonth === undefined) {
+      console.log("correspondence", month, correspondenceMonth);
+    }
+
+    return correspondenceMonth;
+  };
+
+  const getFixedYear = (year) => {
+    const currentYear = new Date().getFullYear().toString();
+    const currentFormatedYear = currentYear.slice(-2);
+    const formatedYear = parseInt(year, 10);
+
+    const fixedYear =
+      formatedYear > currentFormatedYear
+        ? `19${formatedYear}`
+        : `20${formatedYear}`;
+    return fixedYear;
+  };
+
+  const [day, month, year] = getDateArray(item);
+  const dateFormated = {
+    year: getFixedYear(year),
+    month: getFixedMonth(month),
+    day: day,
+  };
+
+  const fixedDate = new Date(
+    dateFormated.year,
+    dateFormated.month,
+    dateFormated.day
+  );
+
+  return fixedDate;
+};
+
 const rows = (data) => {
-  // console.log(data);
+  console.log(data);
   return data && data.length
     ? data
-        .sort((a, b) => new Date(b.date) - new Date(a.date))
+        .sort((a, b) => {
+          return formatedDate(b) - formatedDate(a);
+        })
         .map((bill) => row(bill))
         .join("")
     : "";
 };
-
-// const rows = (data) => {
-//   return data && data.length ? data.map((bill) => row(bill)).join("") : "";
-// };
 
 export default ({ data: bills, loading, error }) => {
   const modal = () => `
