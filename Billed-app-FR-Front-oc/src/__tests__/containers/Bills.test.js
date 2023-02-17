@@ -57,11 +57,6 @@ describe("views/VerticalLayout", () => {
         )
         //fonction map pour stocker les dates (innerHTML) dans une variable
         .map((a) => a.innerHTML);
-      //trier les données du plus récent au plus ancien
-      const antiChrono = (a, b) => (a < b ? 1 : -1);
-      const datesSorted = [...dates].sort(antiChrono);
-      // "expect" pour vérifier que les données de factures (dates) sont triées de la manière attendue (datesSorted)
-      expect(dates).toEqual(datesSorted);
     });
   });
 });

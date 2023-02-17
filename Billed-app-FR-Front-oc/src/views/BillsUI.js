@@ -40,8 +40,8 @@ const formatedDate = (item) => {
   };
 
   const getDateArray = (itemDate) => {
-    console.log(itemDate);
-    console.log(itemDate.date);
+    // console.log(itemDate);
+    // console.log(itemDate.date);
     return itemDate.date.split(" ");
   };
 
@@ -83,7 +83,7 @@ const formatedDate = (item) => {
 };
 
 const rows = (data) => {
-  console.log(data);
+  // console.log(data);
   return data && data.length
     ? data
         .sort((a, b) => {
